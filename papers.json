@@ -1,0 +1,260 @@
+{
+    "middleware17":
+    {
+        "type": "conference",
+        "title": "Rivulet: A Fault-Tolerant Platform for Smart-Home Applications",
+        "authors": "Masoud Saeida Ardekani, Rayman Preet Singh, Nitin Agrawal, Douglas B. Terry, Riza O. Suminto",
+        "venue": "In 18th Middleware conference (MIDDLEWARE)",
+        "location": "Las Vegas, Nevada",
+        "date": "December 2017",  
+        "abstract": "Rivulet is a fault-tolerant distributed platform for running smart-home  applications; it can tolerate failures typical for a home environment (e.g., link  losses, network partitions, sensor failures, and device crashes). In contrast to  existing cloud-centric solutions, which rely exclusively on a home gateway device,  Rivulet leverages redundant smart consumer appliances (e.g., TVs, Refrigerators) to  spread sensing and actuation across devices local to the home, and avoids making the Smart-Home Hub a single point of failure. Rivulet ensures event delivery in the  presence of link loss, network partitions and other failures in the home, to enable  applications with reliable sensing in the case of sensor failures, and event processing in the presence of device crashes. In this paper, we present the design and implementation of Rivulet, and evaluate its effective handling of failures in a smart  home.",
+        "refs": {
+            "@acm": "https://masoud.io"
+        },
+        "visible": "true"
+    },     
+    "plos17":
+    {
+        "type": "workshop",
+        "title": "Programmable Elasticity for Actor-based Cloud Applications",
+        "authors": "Bo Sang, Srivatsan Ravi, Gustavo Petri, Mahsa Najafzadeh, Masoud Saeida Ardekani and Patrick Eugster",
+        "venue": "In 9th Workshop on Programming Languages and Operating Systems (PLOS in conjunction with SOSP)",
+        "location": "Shanghai, China",
+        "date": "October 2017",  
+        "abstract": "The actor model is a popular paradigm for programming scalable cloud applications. Building elastic and scalable cloud applications requires application developers to carefully adjust the application scale (the required resources) and the placement of actors at the runtime. Unfortunately, there is no efficient solution which could manage application elasticity automatically during runtime without disrupting ongoing requests. This paper proposes the idea of programmable elasticity approach, which allows application developers to define a set of elasticity rules for different actors. The runtime service endeavors to apply the elasticity rules while relieving the application programmer from dealing with the management of distributed state and efficient utilization of cloud resources.",
+        "refs": {
+            "@acm": "https://dl.acm.org/citation.cfm?id=3144558&CFID=835995448& CFTOKEN=96995358"
+        },
+        "visible": "true"
+    }, 
+    "socc17":
+    {
+        "type": "conference",
+        "title": "Secure Data Types: A Simple Abstraction for Confidentiality-Preserving Data Analytics",
+        "authors": "Savvas Savvides, Julian James Stephen, Masoud Saieda Ardekani, Vinaitheerthan Sundaram, Patrick Eugster",
+        "venue": "In 8th Symposium on Cloud Computing (SoCC)",
+        "location": "Santa Clara, California",
+        "date": "September 2017",  
+        "abstract": "Cloud computing offers a cost-efficient data analytics platform. However, due to the sensitive nature of data, many organizations are reluctant to analyze their data in public clouds. Both software-based and hardware-based solutions have been proposed to address the stalemate, yet all have substantial limitations. We observe that a main issue cutting across all solutions is that they attempt to support confidentiality in data queries in a way transparent to queries. We propose the novel abstraction of secure data types with corresponding annotations for programmers to conveniently denote constraints relevant to security. These abstractions are leveraged by novel compilation techniques in our system Cuttlefish to compute data analytics queries in public cloud infrastructures while keeping sensitive data confidential. Cuttlefish encrypts all sensitive data residing in the cloud and employs partially homomorphic encryption schemes to perform operations securely, resorting however to client-side completion, re-encryption, or secure hardware-based re-encryption based on Intel's SGX when available based on a novel planner engine. Our evaluation shows that our prototype can execute all queries in standard benchmarks such as TPC-H and TPC-DS with an average overhead of 2.34× and 1.69× respectively compared to a plaintext execution that reveals all data.",
+        "refs": {
+            "@acm": "https://dl.acm.org/citation.cfm?id=3129256&CFID=814444615&CFTOKEN=38807342",
+            "pdf": "http://dl.acm.org/authorize?N41818",
+            "slides": "docs/socc17-slides.pdf"
+        },
+        "visible": "true"
+    }, 
+    "icdcs17":
+    {
+        "type": "conference",
+        "title": "Dependable Cloud Resources with Guardian",
+        "authors": "Bara Abusalah, Derek Schatzlein, Julian James Stephen, Masoud Saeida Ardekani, Patrick Eugster",
+        "venue": " In 37th International Conference on Distributed Computing Systems (ICDCS)",
+        "location": "Atlanta, GA",
+        "date": "June 2017",  
+        "abstract": "Despite advances in making datacenters dependable, failures still happen. This is particularly onerous for long-running \"big data\" applications, where partial failures can lead to significant losses and lengthy recomputations. Big data processing frameworks like Hadoop MapReduce include fault tolerance (FT) mechanisms, but these are commonly targeted at specific system/failure models, and are often redundant between frameworks. This paper proposes the paradigm of dependable resources: big data processing frameworks are typically built on top of resource management systems (RMSs), and proposing FT support at the level of such an RMS yields generic FT mechanisms, which can be provided with low overhead by leveraging constraints on resources. We demonstrate our concepts through Guardian, a robust RMS based on YARN. Guardian allows frameworks to run their applications with individually configurable FT granularity and degree, with only minor changes to their implementation. We demonstrate the benefits of our approach by evaluating Hadoop, Tez, Spark and Pig on Guardian in Amazon-EC2, improving completion time by around 68% in the presence of failures, while maintaining around 6% overhead.",
+        "refs": {
+            "@ieeexplored": "http://ieeexplore.ieee.org/document/7980092"
+        }
+    },     
+    "middleware16":
+    {
+        "type": "conference",
+        "title": "Elastic Cloud Programming with AEON",
+        "authors": "Bo Sang, Gustavo Petri, Masoud Saeida Ardekani, Srivatsan Ravi, Patrick Eugster",
+        "venue": "In 17th Middleware conference (MIDDLEWARE)",
+        "location": "Trento, Italy",
+        "date": "December 2016",  
+        "abstract": "Designing low-latency cloud-based applications that are adaptable to unpredictable workloads and efficiently utilize modern cloud computing platforms is hard. The actor model is a popular paradigm that can be used to develop distributed applications: actors encapsulate state and communicate with each other by sending events. Consistency is guaranteed if each event only accesses a single actor, thus eliminating potential data races and deadlocks. However it is nontrivial to provide consistency for concurrent events spanning across multiple actors. This paper addresses this problem by introducing AEON: a framework that provides the following properties: (i) Programmability: programmers only need to reason about sequential semantics when reasoning about concurrency resulting from multi-actor events; (ii) Scalability: AEON runtime protocol guarantees serializable and starvation-free execution of multi-actor events, while maximizing parallel execution; (iii) Elasticity: AEON supports fine-grained elasticity enabling the programmer to transparently migrate individual actors without violating the consistency or entailing significant performance overheads. Our empirical results show that it is possible to combine the best of all the above three worlds without compromising on the application performance.",
+        "refs": {
+            "@acm": "https://dl.acm.org/citation.cfm?id=2988352",
+            "pdf": "http://dl.acm.org/authorize?N46277"
+        }
+    },     
+    "socc16":
+    {
+        "type": "conference",
+        "title": "STYX: Stream Processing with Trustworthy Cloud-based Execution",
+        "authors": "Julian James Stephen, Savvas Savvides, Vinaitheerthan Sundaram, Masoud Saeida Ardekani, Patrick Eugster",
+        "venue": "In 7th Symposium on Cloud Computing (SoCC)",
+        "location": "Santa Clara, California",
+        "date": "October 2016",  
+        "abstract": "With the advent of the Internet of Things (IoT), billions of devices are expected to continuously collect and process sensitive data (e.g., location, personal health). Due to limited computational capacity available on IoT devices, the current de facto model for building IoT applications is to send the gathered data to the cloud for computation. While private cloud infrastructures for handling large amounts of data streams are expensive to build, using low cost public (untrusted) cloud infrastructures for processing continuous queries including on sensitive data leads to concerns over data confidentiality. This paper presents STYX, a novel programming abstraction and managed runtime system, that ensures confidentiality of IoT applications whilst leveraging the public cloud for continuous query processing. The key idea is to intelligently utilize partially homomorphic encryption to perform as many computationally intensive operations as possible in the untrusted cloud. STYX provides a simple abstraction to the IoT developer to hide the complexities of (1) applying complex cryptographic primitives, (2) reasoning about performance of such primitives, (3) deciding which computations can be executed in an untrusted tier, and (4) optimizing cloud resource usage. An empirical evaluation with benchmarks and case studies shows the feasibility of our approach.",
+        "refs": {
+            "@acm": "http://dl.acm.org/citation.cfm?id=2987574&CFID=679623179&CFTOKEN=55757094",
+            "pdf": "http://dl.acm.org/ft_gateway.cfm?id=2987574&ftid=1795172&dwn=1&#URLTOKEN#",
+            "slides": "docs/socc16-slides.pdf"
+        }
+    },     
+    "concur16":
+    {
+        "type": "tr",
+        "title": "Consistency in 3D",
+        "authors": "Marc Shapiro, Masoud Saeida Ardekani, Gustavo Petri",
+        "venue": "Technical Report RR-8932 <br /> Invited talk in 27th International Conference on Concurrency Theory (CONCUR)",
+        "location": "Québec, Canada",
+        "date": "August 2016",  
+        "abstract": "Comparisons of different consistency models often try to place them in a linear strong-to-weak order. However this view is clearly inadequate, since it is well known, for instance, that Snapshot Isolation and Serialisability are incomparable. In the interest of a better understanding, we propose a new classification, along three dimensions, related to: a total order of writes, a causal order of reads, and transactional composition of multiple operations. A model may be stronger than another on one dimension and weaker on another. We believe that this new classification scheme is both scientifically sound and has good explicative value. The current paper presents the three-dimensional design space intuitively.",
+        "refs": {
+            "@inriaHal": "https://hal.inria.fr/hal-01350668",
+            "pdf": "https://hal.archives-ouvertes.fr/hal-01343592/document",
+            "bib": "docs/bibs/tr16.bib"
+        }
+    },      
+    "dcc16":
+    {
+        "type": "workshop",
+        "title": "The Misbelief in Delay Scheduling",
+        "authors": "Derek Schatzlein, Srivatsan Ravi, Youngtae Noh, Masoud Saeida Ardekan, Patrick Eugster",
+        "venue": "In 4th Workshop on Distributed Cloud Computing (DCC in conjunction with PODC)",
+        "location": "Chicago, IL",
+        "date": "July 2016",  
+        "abstract": "Big-data processing frameworks like Hadoop and Spark, often used in multi-user environments, have struggled to achieve a balance between the full utilization of cluster resources and fairness between users. In particular, data locality becomes a concern, as enforcing fairness policies may cause poor placement of tasks in relation to the data on which they operate. To combat this, the schedulers in many frameworks use a heuristic called delay scheduling, which involves waiting for a short, constant interval for data-local task slots to become free if none are available; however, a fixed delay interval is inefficient, as the ideal time to delay varies depending on input data size, network conditions, and other factors. We propose an adaptive solution (Dynamic Delay Scheduling), which uses a simple feedback metric from finished tasks to adapt the delay scheduling interval for subsequent tasks at runtime. We present a dynamic delay implementation in Spark, and show that it outperforms a fixed delay in TPC-H benchmarks. Our preliminary experiments confirm our intuition that job latency in batch-processing scheduling can be improved using simple adaptive techniques with almost no extra state overhead.",
+        "refs": {
+            "@acm": "http://dl.acm.org/citation.cfm?id=2955203",
+            "pdf": "http://dl.acm.org/ft_gateway.cfm?id=2955203&ftid=1759040&dwn=1&#URLTOKEN#"
+        }
+    },     
+    "tr15":
+    {
+        "type": "tr",
+        "title": "Emulating Geo-Replication on Grid'5000",
+        "authors": "Dastagiri Reddy Malikireddy, Masoud Saeida Ardekani, Marc Shapiro",
+        "venue": "Technical Report RT-455",
+        "location": "INRIA",
+        "date": "April 2015",  
+        "abstract": "In the field of Distributed systems, many experiments require cloud infrastructure. However, having a datacenter like architecture is not always possible. Therefore we use Distem to emulate geo-replication on Grid’5000 that allows experimentation similar to that on the cloud. This further allows us to simulate latencies of 100-200 milliseconds as opposed to latencies of 10-20 milliseconds observed on Grid’5000. We make GDUR, a middleware on Grid’5000, compatible to the geo-replicated setup. We discuss the challenges faced in emulating Geo-Replication and thereby study the latency-throughput curves on the emulated platform for different protocols in GDUR.",
+        "refs": {
+            "@inriaHal": "https://hal.inria.fr/hal-01149185",
+            "pdf": "https://hal.inria.fr/hal-01149185/document",
+            "bib": "docs/bibs/tr15.bib"
+        }
+    },    
+    "middleware14":
+    {
+        "type": "conference",
+        "title": "G-DUR: A Middleware for Assembling, Analyzing, and Improving Transactional Protocols",
+        "authors": "Masoud Saeida Ardekani, Pierre Sutra, Marc Shapiro",
+        "venue": "In 15th Middleware conference (MIDDLEWARE)",
+        "location": "Bordeaux, France",
+        "date": "December 2014",  
+        "abstract": "A large family of distributed transactional protocols have a common structure, called Deferred Update Replication (DUR). DUR provides dependability by replicating data, and performance by not re-executing transactions but only applying their updates. Protocols of the DUR family differ only in behaviors of few generic functions. Based on this insight, we offer a generic DUR middleware, called G-DUR, along with a library of finely-optimized plug-in implementations of the required behaviors. This paper presents the middleware, the plugins, and an extensive experimental evaluation in a geo-replicated environment. Our empirical study shows that:(i) G-DUR allows developers to implement various transactional protocols with less than 600 lines of code; (ii) It provides a fair, apples-to-apples comparison between transactional protocols; (iii) By replacing plugs-ins, developers can use G-DUR to understand bottlenecks in their protocols; (iv) This in turn enables the improvement of existing protocols; and (v) Given a protocol, G-DUR allows to evaluate the cost of ensuring various degrees of dependability.",
+        "refs": {
+            "@acm": "http://dl.acm.org/citation.cfm?id=2663336",
+            "pdf": "http://dl.acm.org/authorize?N46275",
+            "slides": "docs/middleware14-slides.pdf"
+        }
+    },   
+    "osdi14":
+    {
+        "type": "conference",
+        "title": "A Self-Configurable Geo-Replicated Cloud Storage System",
+        "authors": "Masoud Saeida Ardekani, Douglas B. Terry",
+        "venue": "In 11th Symposium on Operating Systems Design and Implementation (OSDI)",
+        "location": "Broomfield, CO",
+        "date": "October 2014",  
+        "abstract": "Reconfiguring a cloud storage system can improve its overall service. Tuba is a geo-replicated key-value store that automatically reconfigures its set of replicas while respecting application-defined constraints so that it adapts to changes in clients' locations or request rates. New replicas may be added, existing replicas moved, replicas upgraded from secondary to primary, and the update propagation between replicas adjusted. Tuba extends a commercial cloud-based service, Microsoft Azure Storage, with broad consistency choices (as in Bayou), consistency-based SLAs (as in Pileus), and a novel replication configuration service. Compared with a system that is statically configured, our evaluation shows that Tuba increases the reads that return strongly consistent data by 63%.",
+        "refs": {
+            "@usenix": "https://www.usenix.org/conference/osdi14/technical-sessions/presentation/ardekani",
+            "pdf": "https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-ardekani.pdf",
+            "video": "https://www.usenix.org/conference/osdi14/technical-sessions/presentation/ardekani",
+            "slides": "https://www.usenix.org/sites/default/files/conference/protected-files/osdi14_slides_ardekani.pdf"
+        }
+    },       
+    "thesis14":
+    {
+        "type": "thesis",
+        "title": "Ensuring Consistency in Partially Replicated Data Stores",
+        "authors": "Masoud Saeida Ardekani",
+        "venue": "PhD Thesis",
+        "location": "Pierre and Marie Curie University (Paris 6)",
+        "date": "September 2014", 
+        "abstract": "Cloud-based applications, such as social networking or eCommerce, require to replicate data across several sites to provide responsiveness, availability, and disaster tolerance. Ensuring consistency over a large scale system with slow, and failure prone WANs has become of a paramount importance. This thesis studies this issue. In the first part, we study consistency in a transactional systems, and focus on reconciling scalability with strong transactional guarantees. We identify four scalability properties as being critical for scalability: (i) only replicas updated by a transaction T make steps to execute T; (ii) a read-only transaction never waits for concurrent transactions and always commits; (iii) a transaction may read versions committed after it started; and (iv) two transactions synchronize with each other only if their writes conflict. We show that none of the strong consistency criteria ensure all four. We define a new scalable consistency criterion called Non-Monotonic Snapshot Isolation (NMSI), while is the first that is compatible with all four properties. We also present a practical implementation of NMSI, called Jessy, which we compare experimentally against a number of well-known criteria. Our last contribution in the first part is a framework for performing fair, and apples-to-apples comparison among different transactional protocols. Our insight is that a large family of distributed transactional protocols have a common structure, called Deferred Update Replication (DUR). Protocols of the DUR family differ only in behaviors of few generic functions. We present a generic DUR framework, called G-DUR, along with a library of finely-optimized plug-in implementations of the required behaviors. Our empirical study shows that: (i) G-DUR allows developers to implement various transactional protocols in less than few hundreds lines of code; (ii) It provides a fair, apples-to-apples comparison between transactional protocols; (iii) By replacing plugs-ins, developers can use G-DUR to understand bottlenecks in their protocols; (iv) This in turn enables the improvement of existing protocols; and (v) Given a protocol, G-DUR allows to evaluate the cost of ensuring various degrees of dependability. In the second part of this thesis, we focus on ensuring consistency in non-transactional data stores. We introduce Tuba, a replicated key-value store that dynamically selects replicas in order to maximize the utility delivered to read operations according to a desired consistency defined by the application. In addition, unlike current systems, it automatically reconfigures its set of replicas while respecting application-defined constraints so that it adapts to changes in clients’ locations or request rates. We implemented Tuba on top of Windows Azure Storage (WAS). While providing similar API, Tuba extends WAS with a broad set of consistency choices, consistency-based SLAs, and a geo-replication configuration service. Compared with a system that is statically configured, our evaluation shows that Tuba increases the reads that return strongly consistent data by 63% and improves average utility up to 18%.",
+        "refs": {
+            "pdf": "docs/phdthesis.pdf",
+            "bib": "docs/bibs/phdthesis.bib"
+        }
+    },         
+    "srds13":
+    {
+        "type": "conference",
+        "title": "Non-Monotonic Snapshot Isolation: scalable and strong consistency for geo-replicated transactional systems",
+        "authors": "Masoud Saeida Ardekani, Pierre Sutra, Marc Shapiro",
+        "venue": "In 32nd International Symposium on Reliable Distributed Systems (SRDS)",
+        "location": "Braga, Portugal",
+        "date": "October 2013",  
+        "abstract": "Modern cloud systems are geo-replicated to improve application latency and availability. Transactional consistency is essential for application developers, however, the corresponding concurrency control and commitment protocols are costly in a geo-replicated setting. To minimize this cost, we identify the following essential scalability properties: (i) only replicas updated by a transaction T make steps to execute T, (ii) a read-only transaction never waits for concurrent transactions and always commits, (iii) a transaction may read object versions committed after it started, and (iv) two transactions synchronize with each other only if their writes conflict. We present Non-Monotonic Snapshot Isolation (NMSI), the first strong consistency criterion to allow implementations with all four properties. We also present a practical implementation of NMSI called Jessy, which we compare experimentally against a number of well-known criteria. Our measurements show that the latency and throughput of NMSI are comparable to the weakest criterion, read-committed, and between two to fourteen times faster than well-known strong consistencies.",
+        "refs": {
+            "preprint": "https://pages.lip6.fr/Marc.Shapiro/papers/NMSI-SRDS-2013.pdf",
+            "@ieeexplore": "https://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6656272&sortType%3Dasc_p_Sequence%26filter%3DAND(p_IS_Number%3A6656246)"
+        }
+    },    
+    "europar13":
+    {
+        "type": "conference",
+        "title": "On the scalability of Snapshot Isolation",
+        "authors": "Masoud Saeida Ardekani, Pierre Sutra, Marc Shapiro, Nuno Preguica",
+        "venue": "In 19th International European Conference on Parallel and Distributed Computing (Euro-Par)",
+        "location": "Aachen, Germany",
+        "date": "August 2013",  
+        "abstract": "Many distributed applications require transactions. However, transactional protocols that require strong synchronization are costly in large scale environments. Two properties help with scalability of a transactional system: genuine partial replication (GPR), which leverages the intrinsic parallelism of a workload, and snapshot isolation (SI), which decreases the need for synchronization. We show that under standard assumptions (data store accesses are not known in advance, and transactions may access arbitrary objects in the data store), it is impossible to have both SI and GPR. Our impossibility result is based on a novel decomposition of SI which proves that, like serializability, SI is expressible on plain histories.",
+        "refs": {
+            "@Springer": "http://link.springer.com/chapter/10.1007%2F978-3-642-40047-6_39"
+        }
+    },    
+    "tr13":
+    {
+        "type": "tr",
+        "title": "Non-Monotonic Snapshot Isolation",
+        "authors": "Masoud Saeida Ardekani, Pierre Sutra, Nuno Preguica, Marc Shapiro",
+        "venue": "Technical Report RR-7805",
+        "location": "INRIA",
+        "date": "June 2013", 
+        "abstract": "Many distributed applications require transactions. However, transactional protocols that require strong synchronization are costly in large scale environments. Two properties help with scalability of a transactional system: genuine partial replication (GPR), which leverages the intrinsic parallelism of a workload, and snapshot isolation (SI), which decreases the need for synchronization. We show that, under standard assumptions (data store accesses are not known in advance, and transactions may access arbitrary objects in the data store), it is impossible to have both SI and GPR. To circumvent this impossibility, we propose a weaker consistency criterion, called Non-Monotonic Snapshot Isolation (NMSI). NMSI retains the most important properties of SI, i.e., read-only transactions always commit, and two write-conflicting updates do not both commit. We present a GPR protocol that ensures NMSI, and has lower message cost (i.e., it contacts fewer replicas and/or commits faster) than previous approaches.",
+        "refs": {
+            "@inriaHal": "https://hal.inria.fr/hal-00643430",
+            "@arxiv": "https://arxiv.org/abs/1306.3906",
+            "pdf": "https://hal.inria.fr/hal-00643430v5/document",
+            "bib": "docs/bibs/tr13.bib"
+        }
+    },    
+    "hotcdp12":
+        {
+            "type": "workshop",
+            "title": "The Space Complexity of Transactional Interactive Reads",
+            "authors": "Masoud Saeida Ardekani, Marek Zawirski, Pierre Sutra, Marc Shapiro",
+            "venue": "In 1st Workshop on Hot Topics in Cloud Data Processing (HotCDP in conjunction with Eurosys)",
+            "location": "Bern, Switzerland",
+            "date": "April 2012",  
+            "abstract": "Many distributed applications require transactions. However, transactional protocols that require strong synchronization are costly in large scale environments. Two properties help with scalability of a transactional system: genuine partial replication (GPR), which leverages the intrinsic parallelism of a workload, and snapshot isolation (SI), which decreases the need for synchronization. We show that under standard assumptions (data store accesses are not known in advance, and transactions may access arbitrary objects in the data store), it is impossible to have both SI and GPR. Our impossibility result is based on a novel decomposition of SI which proves that, like serializability, SI is expressible on plain histories.",
+            "refs": {
+                "pdf": "http://dl.acm.org/authorize?6645934"
+            }
+        },
+        "wttm11":
+        {
+            "type": "workshop",
+            "title": "The Impossibility of Ensuring Snapshot Isolation in Genuine Replicated STMs",
+            "authors": "Masoud Saeida Ardekani, Pierre Sutra, and Marc Shapiro",
+            "venue": "In 3rd Workshop on the Theory of Transactional Memory (WTTM in conjunction with DISC)",
+            "location": "Rome, Italy",
+            "date": "2011", 
+            "abstract": "Many distributed applications require transactions. However, transactional protocols that require strong synchronization are costly in large scale environments. Two properties help with scalability of a transactional system: genuine partial replication (GPR), which leverages the intrinsic parallelism of a workload, and snapshot isolation (SI), which decreases the need for synchronization. We show that under standard assumptions (data store accesses are not known in advance, and transactions may access arbitrary objects in the data store), it is impossible to have both SI and GPR. Our impossibility result is based on a novel decomposition of SI which proves that, like serializability, SI is expressible on plain histories.",
+            "refs": {
+                "pdf": "https://pages.lip6.fr/Marc.Shapiro/papers/Impossibility_of_Genuine_Replicated_STM_under_SI-WTTM-2011.pdf",
+                "bib": "docs/bibs/wttm11.bib"
+            }
+        },
+        "thesis10":
+        {
+            "type": "thesis",
+            "title": "Making Structured Overlay Networks Data Center Friendly",
+            "authors": "Masoud Saeida Ardekani",
+            "venue": "Master's Thesis (TRITA-ICT-EX-2010:214)",
+            "location": "The Royal Institute of Technology (KTH)",
+            "date": "September 2010", 
+            "abstract": "Most existing overlay networks do not consider deployment over multiple data centers where peers in a same data center are connected with low latency and high bandwidth, while peers in different data centers are connected with high latency and medium bandwidth. Deploying these systems on data center infrastructures will lead to performance degradation in lookup latency, and inter-datacenter bandwidth consumption. In this dissertation, we introduce a new class of overlay networks called data center friendly overlays, and characterize their most important properties. We also propose a novel gossip generated inter-datacenter overlay that can be used on top of any SON in order to make it data center friendly. Our solution does not need any modification to routing, and maintenance protocols of the underlying SON. It uses the Gradient topology to select the highest utility nodes in each DC. These highest utility nodes gossip with nodes in other DCs, and build a gossip generated inter-datacenter overlay. We also propose a novel broadcast solution using the Gradient topology to disseminate gossiped views inside each DC. We also compare our solution performance under different scenarios with Kademlia DHT. Our experiments show that by using inter-datacenter overlay on top of a SON, inter-datacenter lookup hops reduce to one while inter-datacenter traffic is kept minimum. Moreover, using the inter-datacenter overlay on top of a SON, total number of hops decreases, and the whole system performs better under churns, and failures.",
+            "refs": {
+                "pdf":   ""
+            }
+        }        
+}        

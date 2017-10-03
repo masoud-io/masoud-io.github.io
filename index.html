@@ -1,439 +1,193 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta name="google-site-verification"
-	content="ZkOAh6MY5_gc2i0PNF0WOzeQ1Mt1VO6yRN_c-45njv4" />
-<title>Homepage of Masoud Saeida Ardekani (Masood Saeeda
-	Ardekani) (مسعود سعیدا اردکانی)</title>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="style.css" type="text/css" />
+	<meta name="google-site-verification" content="ZkOAh6MY5_gc2i0PNF0WOzeQ1Mt1VO6yRN_c-45njv4" />
+	<title>Homepage of Masoud Saeida Ardekani (مسعود سعیدا اردکانی)</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-<link href='https://fonts.googleapis.com/css?family=Tangerine'
-	rel='stylesheet' type='text/css' />
-<link href="jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" />
-<script src="jquery-ui-1.11.2.custom/external/jquery/jquery.js"
-	type="text/javascript"></script>
-<script src="jquery-ui-1.11.2.custom/jquery-ui.js"
-	type="text/javascript"></script>
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css' />
+	<link href="jquery-ui-1.11.2.custom/jquery-ui.css" rel="stylesheet" />
+	<script src="jquery-ui-1.11.2.custom/external/jquery/jquery.js" type="text/javascript"></script>
+	<script src="jquery-ui-1.11.2.custom/jquery-ui.js" type="text/javascript"></script>
 
-<script>
-	$(function() {
-		$("#accordion-1").accordion({
-			active : false,
-			collapsible : true,
-			heightStyle : "content"
+	<script>
+		$(function () {
+			$("#accordion-1").accordion({
+				active: false,
+				collapsible: true,
+				heightStyle: "content"
+			});
 		});
-	});
 
-	$(function() {
-		$("#accordion-2").accordion({
-			active : false,
-			collapsible : true,
-			heightStyle : "content"
+		$(function () {
+			$("#accordion-2").accordion({
+				active: false,
+				collapsible: true,
+				heightStyle: "content"
+			});
 		});
-	});
 
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		// 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		// })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		// ga('create', 'UA-64718133-1', 'auto');
+		// ga('send', 'pageview');
+	</script>
 
-ga('create', 'UA-64718133-1', 'auto');
-ga('send', 'pageview');
-</script>
+	<script type="text/javascript">
+		$.getJSON("papers.json", function (json) {
+			for (paper in json) {
+				if (json[paper]["visible"] != null && json[paper]["visible"] == "false") {
+					continue;
+				}
+
+				if (json[paper]["type"] == "conference" || json[paper]["type"] == "workshop") {
+					var ac = $('#accordion-1');
+				} else {
+					var ac = $('#accordion-2');
+				}
+
+				var title = json[paper]["title"] + "<br />" + json[paper]["authors"] + "<br />" + json[paper]["venue"] + ", " +
+					json[paper]["location"] + ", " + json[paper]["date"];
+				var content = ""
+				for (ref in json[paper]["refs"]) {
+					content += "<a href=" + json[paper]["refs"][ref] + ">[" + ref + "]</a> ";
+				}
+				content += "<br /> Abstract: " + json[paper]["abstract"];
+				var newDiv = "<h3>" + title + "</h3><div>" + content + "</div>";
+				ac.append(newDiv)
+				ac.accordion("refresh");
+			}
+		});
+	</script>
+
+	<script type="text/javascript">
+		$.getJSON("news.json", function (json) {
+			var strNews = "";
+			var index = 0;
+			while (index < 5 && index < json.news.length) {
+				strNews += "<li>" + json.news[index++] + "</li>";
+			}
+			var content = "<ul>" + strNews + "</ul>"
+			$('#news').append(content)
+		});
+	</script>
+
+	<script type="text/javascript">
+		$.getJSON("service.json", function (json) {
+			var content = "<ul>";
+			content += "<li> PC: " + json.pc + "</li>"
+			content += "<li> Review: " + json.review + "</li>"
+			content += "</ul>";
+			$('#service').append(content)
+		});
+	</script>
+
 </head>
+
 <body>
 	<div id="all">
 		<div id="header">
 
 			<span style="float: right; margin-right: 5px; display: inline;" />
-				<div class="title">Masoud Saeida Ardekani</div>
+			<div class="title">Masoud Saeida Ardekani</div>
 		</div>
 
-		<img src="header4.jpg" height="225.5" align="left" alt="header" />
+		<!-- <img src="header4.jpg" height="225.5" align="left" alt="header" /> -->
 
 		<div id="content">
-
+			<img src="pic.jpg" align="left" height="150.5" hspace="20" />
 			<h1>Short Bio</h1>
 			<p>
-				I am a researcher at Samsung Research America. Before that,
-				I was a visiting assistant professor at Purdue University. I received
-				my PhD in Computer Science from Pierre and Marie Curie University
-				(Paris 6) under the supervision of <a
-					href="http://lip6.fr/Marc.Shapiro/"> Marc
-					Shapiro</a>. My research focus is on systems and algorithms for:
-				<ul>
-					<li>Ensuring Consistency in Large Scale Distributed Systems</li>
-					<li>Large Scale Data-Intensive Computing</li>
-					<li>Internet of Things</li>
-				</ul>
+				I am a researcher at Samsung Research America. Before that, I was a visiting assistant professor at Purdue University.
+				I received my PhD in Computer Science from Pierre and Marie Curie University (Paris 6) under the advice of
+				<a href="http://lip6.fr/Marc.Shapiro/"> Marc Shapiro </a>.
+				<br/> I'm interested in practice of distributed systems.
+			</p>
+			<BR />
+			<BR />
+			<BR />
 
+			<h1>News</h1>
+			<p id="news">
 			</p>
 
 			<h1>Conference &amp; Workshop</h1>
 
 			<div id="accordion-1">
-				<h3>
-					G-DUR: A Middleware for Assembling, Analyzing, and Improving
-					Transactional Protocols. <br /> Masoud Saeida Ardekani, Pierre
-					Sutra, Marc Shapiro. <br /> In 15th Middleware
-					conference (MIDDLEWARE). Bordeaux, France, December 2014.
-				</h3>
-				<div>
-				<a href="docs/middleware14.bib">[bib]</a>
-				<a
-						href="http://dl.acm.org/citation.cfm?id=2663336">[@acmLink]</a>
-						<a href="docs/middleware14-slide.pdf">[Slides]</a>
-						Abstract: A large family of distributed transactional
-					protocols have a common structure, called Deferred Update
-					Replication (DUR). DUR provides dependability by replicating data,
-					and performance by not re-executing transactions but only applying
-					their updates. Protocols of the DUR family differ only in behaviors
-					of few generic functions. Based on this insight, we offer a generic
-					DUR middleware, called G-DUR, along with a library of
-					finely-optimized plug-in implementations of the required behaviors.
-					This paper presents the middleware, the plugins, and an extensive
-					experimental evaluation in a geo-replicated environment. Our
-					empirical study shows that:(i) G-DUR allows developers to implement
-					various transactional protocols with less than 600 lines of code;
-					(ii) It provides a fair, apples-to-apples comparison between
-					transactional protocols; (iii) By replacing plugs-ins, developers
-					can use G-DUR to understand bottlenecks in their protocols; (iv)
-					This in turn enables the improvement of existing protocols; and (v)
-					Given a protocol, G-DUR allows to evaluate the cost of ensuring
-					various degrees of dependability.</div>
 
-				<h3>
-					A Self-Configurable Geo-Replicated Cloud Storage System. <br />
-					Masoud Saeida Ardekani, Douglas B. Terry <br /> In 11th Symposium
-					on Operating Systems Design and Implementation (OSDI). Broomfield,
-					CO, October 2014.
-				</h3>
-				<div>
-					<a href="docs/osdi14.bib">[bib]</a> <a href="docs/osdi14.pdf">[pdf]</a>
-					<a
-						href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/ardekani">[@UsenixLink]
-						</a>
-					<a
-						href="https://www.usenix.org/conference/osdi14/technical-sessions/presentation/ardekani">[Video]
-						</a>
-					<a
-						href="https://www.usenix.org/sites/default/files/conference/protected-files/osdi14_slides_ardekani.pdf">[Slides]
-						</a>
-					<br /> Abstract: Reconfiguring a cloud storage system can improve
-					its overall service. Tuba is a geo-replicated key-value store that
-					automatically reconfigures its set of replicas while respecting
-					application-defined constraints so that it adapts to changes in
-					clients' locations or request rates. New replicas may be added,
-					existing replicas moved, replicas upgraded from secondary to
-					primary, and the update propagation between replicas adjusted. Tuba
-					extends a commercial cloud-based service, Microsoft Azure Storage,
-					with broad consistency choices (as in Bayou), consistency-based
-					SLAs (as in Pileus), and a novel replication configuration service.
-					Compared with a system that is statically configured, our
-					evaluation shows that Tuba increases the reads that return strongly
-					consistent data by 63%.
-
-
-
-				</div>
-
-				<h3>
-					Non-Monotonic Snapshot Isolation: scalable and strong consistency
-					for geo-replicated transactional systems. <br /> Masoud Saeida
-					Ardekani, Pierre Sutra, Marc Shapiro. <br /> In 32nd International
-					Symposium on Reliable Distributed Systems (SRDS). Braga, Portugal,
-					October 2013.
-				</h3>
-				<div>
-					<a href="docs/srds13.bib">[bib]</a> <a
-						href="http://pagesperso-systeme.lip6.fr/Marc.Shapiro/papers/NMSI-SRDS-2013.pdf">[pdf]</a>
-					<a
-						href="https://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6656272&sortType%3Dasc_p_Sequence%26filter%3DAND(p_IS_Number%3A6656246)">[@IeeexploreLink]</a>
-					<br /> Abstract: Modern cloud systems are geo-replicated to
-					improve application latency and availability. Transactional
-					consistency is essential for application developers, however, the
-					corresponding concurrency control and commitment protocols are
-					costly in a geo-replicated setting. To minimize this cost, we
-					identify the following essential scalability properties: (i) only
-					replicas updated by a transaction T make steps to execute T, (ii) a
-					read-only transaction never waits for concurrent transactions and
-					always commits, (iii) a transaction may read object versions
-					committed after it started, and (iv) two transactions synchronize
-					with each other only if their writes conflict. We present
-					Non-Monotonic Snapshot Isolation (NMSI), the first strong
-					consistency criterion to allow implementations with all four
-					properties. We also present a practical implementation of NMSI
-					called Jessy, which we compare experimentally against a number of
-					well-known criteria. Our measurements show that the latency and
-					throughput of NMSI are comparable to the weakest criterion,
-					read-committed, and between two to fourteen times faster than
-					well-known strong consistencies.
-				</div>
-
-				<h3>
-					On the scalability of Snapshot Isolation. <br /> Masoud Saeida
-					Ardekani, Pierre Sutra, Marc Shapiro, Nuno Preguica. <br /> In
-					19th International European Conference on Parallel and Distributed
-					Computing (Euro-Par). Aachen, Germany, August 2013.
-				</h3>
-				<div>
-					<a href="docs/europar13.bib">[bib]</a> <a
-						href="http://pagesperso-systeme.lip6.fr/Marc.Shapiro/papers/scalability-SI-EuroPar-2013.pdf">[pdf]</a>
-					<a
-						href="http://link.springer.com/chapter/10.1007%2F978-3-642-40047-6_39">[@SpringerLink]</a>
-					<br /> Abstract: Many distributed applications require
-					transactions. However, transactional protocols that require strong
-					synchronization are costly in large scale environments. Two
-					properties help with scalability of a transactional system: genuine
-					partial replication (GPR), which leverages the intrinsic
-					parallelism of a workload, and snapshot isolation (SI), which
-					decreases the need for synchronization. We show that under standard
-					assumptions (data store accesses are not known in advance, and
-					transactions may access arbitrary objects in the data store), it is
-					impossible to have both SI and GPR. Our impossibility result is
-					based on a novel decomposition of SI which proves that, like
-					serializability, SI is expressible on plain histories.
-				</div>
-
-				<h3>
-					The Space Complexity of Transactional Interactive Reads. <br />
-					Masoud Saeida Ardekani, Marek Zawirski, Pierre Sutra, Marc Shapiro.
-					<br /> In 1st Workshop on Hot Topics in Cloud Data Processing (in
-					conjunction with Eurosys 2012). Bern, Switzerland, April 2012.
-				</h3>
-				<div>
-					<a href="docs/hotcdp12.bib">[bib]</a> <a
-						href="http://dl.acm.org/authorize?6645934">[@acmLink]</a> <br />
-					Abstract: Many distributed applications require transactions.
-					However, transactional protocols that require strong
-					synchronization are costly in large scale environments. Two
-					properties help with scalability of a transactional system: genuine
-					partial replication (GPR), which leverages the intrinsic
-					parallelism of a workload, and snapshot isolation (SI), which
-					decreases the need for synchronization. We show that under standard
-					assumptions (data store accesses are not known in advance, and
-					transactions may access arbitrary objects in the data store), it is
-					impossible to have both SI and GPR. Our impossibility result is
-					based on a novel decomposition of SI which proves that, like
-					serializability, SI is expressible on plain histories.
-				</div>
-
-				<h3>
-					The Impossibility of Ensuring Snapshot Isolation in Genuine
-					Replicated STMs. <br /> Masoud Saeida Ardekani, Pierre Sutra, and
-					Marc Shapiro. <br /> In 3rd Workshop on the Theory of
-					Transactional Memory (in conjunction with DISC 2011). Rome, Italy,
-					September 2011.
-				</h3>
-				<div>
-					<a href="docs/wttm11.bib">[bib]</a> <a
-						href="http://pagesperso-systeme.lip6.fr/Marc.Shapiro/papers/Impossibility_of_Genuine_Replicated_STM_under_SI-WTTM-2011.pdf">[pdf]</a>
-					<br /> Abstract: Many distributed applications require
-					transactions. However, transactional protocols that require strong
-					synchronization are costly in large scale environments. Two
-					properties help with scalability of a transactional system: genuine
-					partial replication (GPR), which leverages the intrinsic
-					parallelism of a workload, and snapshot isolation (SI), which
-					decreases the need for synchronization. We show that under standard
-					assumptions (data store accesses are not known in advance, and
-					transactions may access arbitrary objects in the data store), it is
-					impossible to have both SI and GPR. Our impossibility result is
-					based on a novel decomposition of SI which proves that, like
-					serializability, SI is expressible on plain histories.
-				</div>
 			</div>
 
 
 			<h1>TR &amp; Thesis</h1>
 			<div id="accordion-2">
-				<h3>
-					Emulating Geo-Replication on Grid'5000. <br /> Dastagiri Reddy Malikireddy,
-					Masoud Saeida Ardekani, Marc Shapiro. <br /> Technical Report
-					RT-455. INRIA. April 2015.
-				</h3>
-				<div>
-					<a href="docs/tr13.bib">[bib]</a> <a
-						href="https://hal.inria.fr/hal-01149185/document">[pdf]</a>
-					<a href="https://hal.inria.fr/hal-01149185">[@InriaHal]</a> <br />
-					Abstract: In the field of Distributed systems, many experiments require cloud infrastructure.
-					However, having a datacenter like architecture is not always possible.
-					Therefore we use Distem to emulate geo-replication on Grid’5000 that allows experimentation
-					similar to that on the cloud.
-					This further allows us to simulate latencies of 100-200 milliseconds as opposed to
-					latencies of 10-20 milliseconds observed on Grid’5000.
-					We make GDUR, a middleware on Grid’5000, compatible to the geo-replicated setup.
-					We discuss the challenges faced in emulating Geo-Replication and thereby study the
-					latency-throughput curves on the emulated platform for different protocols in GDUR.
-				</div>
-
-				<h3>
-					Ensuring Consistency in Partially Replicated Data Stores. <br />
-					Masoud Saeida Ardekani. <br /> PhD Thesis, Pierre and Marie Curie
-					University (Paris 6), September 2014.
-				</h3>
-				<div>
-					<a href="docs/phdthesis.bib">[bib]</a> <a href="docs/phdthesis.pdf">[pdf]</a>
-					<br /> Abstract: Cloud-based applications, such as social
-					networking or eCommerce, require to replicate data across several
-					sites to provide responsiveness, availability, and disaster
-					tolerance. Ensuring consistency over a large scale system with
-					slow, and failure prone WANs has become of a paramount importance.
-					This thesis studies this issue. In the first part, we study
-					consistency in a transactional systems, and focus on reconciling
-					scalability with strong transactional guarantees. We identify four
-					scalability properties as being critical for scalability: (i) only
-					replicas updated by a transaction T make steps to execute T; (ii) a
-					read-only transaction never waits for concurrent transactions and
-					always commits; (iii) a transaction may read versions committed
-					after it started; and (iv) two transactions synchronize with each
-					other only if their writes conflict. We show that none of the
-					strong consistency criteria ensure all four. We define a new
-					scalable consistency criterion called Non-Monotonic Snapshot
-					Isolation (NMSI), while is the first that is compatible with all
-					four properties. We also present a practical implementation of
-					NMSI, called Jessy, which we compare experimentally against a
-					number of well-known criteria. Our last contribution in the first
-					part is a framework for performing fair, and apples-to-apples
-					comparison among different transactional protocols. Our insight is
-					that a large family of distributed transactional protocols have a
-					common structure, called Deferred Update Replication (DUR).
-					Protocols of the DUR family differ only in behaviors of few generic
-					functions. We present a generic DUR framework, called G-DUR, along
-					with a library of finely-optimized plug-in implementations of the
-					required behaviors. Our empirical study shows that: (i) G-DUR
-					allows developers to implement various transactional protocols in
-					less than few hundreds lines of code; (ii) It provides a fair,
-					apples-to-apples comparison between transactional protocols; (iii)
-					By replacing plugs-ins, developers can use G-DUR to understand
-					bottlenecks in their protocols; (iv) This in turn enables the
-					improvement of existing protocols; and (v) Given a protocol, G-DUR
-					allows to evaluate the cost of ensuring various degrees of
-					dependability. In the second part of this thesis, we focus on
-					ensuring consistency in non-transactional data stores. We introduce
-					Tuba, a replicated key-value store that dynamically selects
-					replicas in order to maximize the utility delivered to read
-					operations according to a desired consistency defined by the
-					application. In addition, unlike current systems, it automatically
-					reconfigures its set of replicas while respecting
-					application-defined constraints so that it adapts to changes in
-					clients’ locations or request rates. We implemented Tuba on top of
-					Windows Azure Storage (WAS). While providing similar API, Tuba
-					extends WAS with a broad set of consistency choices,
-					consistency-based SLAs, and a geo-replication configuration
-					service. Compared with a system that is statically configured, our
-					evaluation shows that Tuba increases the reads that return strongly
-					consistent data by 63% and improves average utility up to 18%.
-				</div>
-
-				<h3>
-					Non-Monotonic Snapshot Isolation. <br /> Masoud Saeida Ardekani,
-					Pierre Sutra, Nuno Preguica, Marc Shapiro. <br /> Technical Report
-					RR-7805. INRIA. June 2013.
-				</h3>
-				<div>
-					<a href="docs/tr13.bib">[bib]</a> <a
-						href="http://hal.inria.fr/docs/00/83/47/12/PDF/paper.pdf">[pdf]</a>
-					<a href="http://fr.arxiv.org/abs/1306.3906">[@arxivLink]</a> <br />
-					Abstract: Many distributed applications require transactions.
-					However, transactional pro- tocols that require strong
-					synchronization are costly in large scale environments. Two
-					properties help with scalability of a transactional system: genuine
-					partial replication (GPR), which leverages the intrinsic
-					parallelism of a workload, and snapshot isolation (SI), which
-					decreases the need for synchronization. We show that, under
-					standard assumptions (data store accesses are not known in advance,
-					and transactions may access arbitrary objects in the data store),
-					it is impossible to have both SI and GPR. To circumvent this
-					impossibility, we propose a weaker consistency criterion, called
-					Non-Monotonic Snapshot Isolation (NMSI). NMSI retains the most
-					important properties of SI, i.e., read-only transactions always
-					commit, and two write-conflicting updates do not both commit. We
-					present a GPR protocol that ensures NMSI, and has lower message
-					cost (i.e., it contacts fewer replicas and/or commits faster) than
-					previous approaches.
-				</div>
-
-				<h3>
-					Making Structured Overlay Networks Data Center Friendly. <br />
-					Masoud Saeida Ardekani. <br /> Master's Thesis
-					(TRITA-ICT-EX-2010:214), The Royal Institute of Technology (KTH).
-					September 2010.
-				</h3>
-				<div>Most existing overlay networks do not consider deployment
-					over multiple data centers where peers in a same data center are
-					connected with low latency and high bandwidth, while peers in
-					different data centers are connected with high latency and medium
-					bandwidth. De- ploying these systems on data center infrastructures
-					will lead to perfor- mance degradation in lookup latency, and
-					inter-datacenter bandwidth consumption. In this dissertation, we
-					introduce a new class of overlay networks called data center
-					friendly overlays, and characterize their most im- portant
-					properties. We also propose a novel gossip generated inter-
-					datacenter overlay that can be used on top of any SON in order to
-					make it data center friendly. Our solution does not need any
-					modifica- tion to routing, and maintenance protocols of the
-					underlying SON. It uses the Gradient topology to select the highest
-					utility nodes in each DC. These highest utility nodes gossip with
-					nodes in other DCs, and build a gossip generated inter-datacenter
-					overlay. We also propose a novel broadcast solution using the
-					Gradient topology to disseminate gossiped views inside each DC. We
-					also compare our solution performance under different scenar- ios
-					with Kademlia DHT. Our experiments show that by using inter-
-					datacenter overlay on top of a SON, inter-datacenter lookup hops
-					re- duce to one while inter-datacenter traffic is kept minimum.
-					Moreover, using the inter-datacenter overlay on top of a SON, total
-					number of hops decreases, and the whole system performs better
-					under churns, and failures.</div>
-
 
 			</div>
-			<!-- <h1>Courses</h1>
-			<p>
-				<a href="courses/DS490DS.html">DS 490 DS (Spring 2015)</a>
-			</p> -->
 
+			<h1>Service</h1>
+			<p id="service">
+			</p>
 
 			<h1>Contact</h1>
-			<p>
-				m [a-t} masoud.io <br />
-				Address:<br />
-				Samsung Research America <br />
-				665 Clyde Ave <br />
-				Mountain View, CA 94043 <br />
-				USA <br />
-			</p>
-			<br />
+
+			<div id="contacts">
+				<ul>
+					<li>
+						m [a-t} masoud.io
+					</li>
+					<li>
+						<a href="https://twitter.com/synchronous_ms"> twitter</a>
+					</li>
+					<li>
+						Samsung Research America
+						<br /> 665 Clyde Ave
+						<br /> Mountain View, CA 94043
+						<br /> USA
+						<br />
+					</li>
+				</ul>
+
+			</div>
+
 		</div>
 		<!-- <a href="http://www.mendeley.com/profiles/masoud-saeida-ardekani/"><img
 			border="0" src="http://www.mendeley.com/embed/icon/1/red/small"
 			alt="Research papers by Masoud Saeida Ardekani" /></a>  -->
-			<a href=""><img
-			src="logo/sbu.jpg" width="30" height="30"
-			title="Shahid Beheshti University" alt="SBU" /></a> <a
-			href="http://www.kth.se/en"><img src="logo/kth.jpg" width="30"
-			height="30" title="Royal Institute of Technology (KTH)" alt="KTH" /></a>
-		<a href="http://www.sics.se"><img src="logo/sics.png" height="30"
-			title="Swedish Institute of Computer Science" alt="SICS" /></a> <a
-			href="http://www.upmc.fr/en/index.html"><img src="logo/upmc.jpg"
-			height="35" title="Pierre and Marie Curie University" alt="UPMC" /></a>
-		<a href="http://www.lip6.fr/"><img src="logo/lip6.gif" height="30"
-			title="Lip6" alt="Lip6" /></a> <a
-			href="http://research.microsoft.com/en-us/"><img
-			src="logo/msr.jpg" height="25" title="MSR" alt="MSR" /></a> <a
-			href="http://www.inria.fr/en/"><img src="logo/inria.png"
-			height="25" title="INRIA" alt="INRIA" /></a>
-			<a
-			href="http://www.purdue.edu/"><img src="logo/purdue.jpg"
-			height="27" title="Purdue" alt="Purdue" /></a>
-			<a
-			href="http://www.sra.samsung.com/"><img src="logo/Samsung.jpg"
-			height="35" title="SRA" alt="SRA" /></a>
+		<a href="">
+			<img src="logo/sbu.jpg" width="30" height="30" title="Shahid Beheshti University" alt="SBU" />
+		</a>
+		<a href="http://www.kth.se/en">
+			<img src="logo/kth.jpg" width="30" height="30" title="Royal Institute of Technology (KTH)" alt="KTH" />
+		</a>
+		<a href="http://www.sics.se">
+			<img src="logo/sics.png" height="30" title="Swedish Institute of Computer Science" alt="SICS" />
+		</a>
+		<a href="http://www.upmc.fr/en/index.html">
+			<img src="logo/upmc.jpg" height="35" title="Pierre and Marie Curie University" alt="UPMC" />
+		</a>
+		<a href="http://www.lip6.fr/">
+			<img src="logo/lip6.gif" height="30" title="Lip6" alt="Lip6" />
+		</a>
+		<a href="http://research.microsoft.com/en-us/">
+			<img src="logo/msr.jpg" height="25" title="MSR" alt="MSR" />
+		</a>
+		<a href="http://www.inria.fr/en/">
+			<img src="logo/inria.png" height="25" title="INRIA" alt="INRIA" />
+		</a>
+		<a href="http://www.purdue.edu/">
+			<img src="logo/purdue.jpg" height="27" title="Purdue" alt="Purdue" />
+		</a>
+		<a href="http://www.sra.samsung.com/">
+			<img src="logo/Samsung.jpg" height="35" title="SRA" alt="SRA" />
+		</a>
 	</div>
-	<div id="footer">Last Modified: Dec 2015</div>
+	<div id="footer">Last Modified: Dec. 2017</div>
 
 
 </body>
+
 </html>
