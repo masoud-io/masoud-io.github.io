@@ -9,7 +9,7 @@
         "date": "December 2017",  
         "abstract": "Rivulet is a fault-tolerant distributed platform for running smart-home  applications; it can tolerate failures typical for a home environment (e.g., link  losses, network partitions, sensor failures, and device crashes). In contrast to  existing cloud-centric solutions, which rely exclusively on a home gateway device,  Rivulet leverages redundant smart consumer appliances (e.g., TVs, Refrigerators) to  spread sensing and actuation across devices local to the home, and avoids making the Smart-Home Hub a single point of failure. Rivulet ensures event delivery in the  presence of link loss, network partitions and other failures in the home, to enable  applications with reliable sensing in the case of sensor failures, and event processing in the presence of device crashes. In this paper, we present the design and implementation of Rivulet, and evaluate its effective handling of failures in a smart  home.",
         "refs": {
-            "@acm": "https://masoud.io"
+            "@acm": "https://dl.acm.org/citation.cfm?id=3135988&CFID=838033351&CFTOKEN=72637853"
         },
         "visible": "true"
     },     
@@ -23,7 +23,8 @@
         "date": "October 2017",  
         "abstract": "The actor model is a popular paradigm for programming scalable cloud applications. Building elastic and scalable cloud applications requires application developers to carefully adjust the application scale (the required resources) and the placement of actors at the runtime. Unfortunately, there is no efficient solution which could manage application elasticity automatically during runtime without disrupting ongoing requests. This paper proposes the idea of programmable elasticity approach, which allows application developers to define a set of elasticity rules for different actors. The runtime service endeavors to apply the elasticity rules while relieving the application programmer from dealing with the management of distributed state and efficient utilization of cloud resources.",
         "refs": {
-            "@acm": "https://dl.acm.org/citation.cfm?id=3144558&CFID=835995448& CFTOKEN=96995358"
+            "@acm": "https://dl.acm.org/citation.cfm?id=3144558&CFID=835995448& CFTOKEN=96995358",
+            "pdf": "http://dl.acm.org/authorize?N41908"
         },
         "visible": "true"
     }, 
