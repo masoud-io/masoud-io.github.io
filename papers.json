@@ -9,8 +9,10 @@
         "date": "July 2019",  
         "abstract": "A large class of IoT applications read sensors, execute application logic, and actuate actuators. However, the lack of high-level programming abstractions compromises correctness especially in presence of failures and unwanted interleaving between applications. A key problem arises when operations on IoT devices or the application itself fails, which leads to inconsistencies between the physical state and application state, breaking application semantics and causing undesired consequences. Transactions are a well-established abstraction for correctness, but assume properties that are absent in an IoT context. In this paper, we study one such environment, smart home, and establish inconsistencies manifesting out of failures. We propose an abstraction called transactuation that empowers developers to build reliable applications. Our runtime, Relacs, implements the abstraction atop a real smart-home platform. We evaluate programmability, performance, and effectiveness of transactuations to demonstrate its potential as a powerful abstraction and execution model.",
         "refs": {
+            "@usenix": "https://www.usenix.org/conference/atc19/presentation/sengupta",
             "pdf": "https://www.usenix.org/system/files/atc19-sengupta.pdf",
-            "@usenix": "https://www.usenix.org/conference/atc19/presentation/sengupta"
+            "video": "https://www.youtube.com/watch?v=yVE3nSSMqoU",
+            "slides": "https://www.usenix.org/sites/default/files/conference/protected-files/atc19_slides_sengupta.pdf"
         },
         "visible": "true"
     },        
@@ -24,8 +26,9 @@
         "date": "March 2019",  
         "abstract": "Giant monolithic source-code repositories are one of the fundamental pillars of the back end infrastructure in large and fast-paced software companies. The sheer volume of everyday code changes demands a reliable and efficient change management system with three uncompromisable key requirements — always green master, high throughput, and low commit turnaround time. Green refers to a master branch that always successfully compiles and passes all build steps, the opposite being red. A broken master (red) leads to delayed feature rollouts because a faulty code commit needs to be detected and rolled backed. Additionally, a red master has a cascading effect that hampers developer productivity— developers might face local test/build failures, or might end up working on a codebase that will eventually be rolled back. This paper presents the design and implementation of SubmitQueue. It guarantees an always green master branch at scale: all build steps (e.g., compilation, unit tests, UI tests) successfully execute for every commit point. SubmitQueue has been in production for over a year, and can scale to thousands of daily commits to giant monolithic repositories.",
         "refs": {
-            "pdf": "docs/eurosys19.pdf",
             "@acm": "https://dl.acm.org/citation.cfm?id=3303970",
+            "pdf": "docs/eurosys19.pdf",
+            "video": "https://se.inf.tu-dresden.de/eurosys2019/Video/27_3/Sundaram%20Ananthanarayanan.mov",
             "@uber-research": "https://eng.uber.com/research/keeping-master-green-at-scale",
             "@the-morning-paper": "https://blog.acolyer.org/2019/04/18/keeping-master-green-at-scale"
         },
