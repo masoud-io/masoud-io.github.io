@@ -45,7 +45,7 @@
 					continue;
 				}
 
-				if (json[paper]["type"] == "conference") {
+				if (json[paper]["type"] == "conference" || json[paper]["type"] == "journal") {
 					var ac = $('#accordion-1');
 				} else {
 					var ac = $('#accordion-2');
@@ -118,7 +118,7 @@
 			<p id="news">
 			</p>
 
-			<h1>Conference</h1>
+			<h1>Conference / Journal</h1>
 
 			<div id="accordion-1">
 
@@ -183,7 +183,7 @@
 			<img src="logo/uber.png" height="25" title="Uber" alt="Uber" />
 		</a>		
 	</div>
-	<div id="footer">Last Modified: January 2020</div>
+	<div id="footer">Last Modified: June 2020</div>
 
 
 </body>

@@ -1,8 +1,23 @@
 {
+    "tocs20":
+    {
+        "type": "journal",
+        "title": "Transactuations: Where Transactions Meet the Physical World ☞ [Extended Version]",
+        "authors": "Tanakorn Leesatapornwongsa, Aritra Sengupta, Masoud Saeida Ardekani, Gustavo Petri, Cesar A. Stuardo",
+        "venue": "ACM Transactions on Computer Systems (TOCS)",
+        "location": "New York, NY",
+        "date": "May 2020",  
+        "abstract": "A large class of IoT applications read sensors, execute application logic, and actuate actuators. However, the lack of high-level programming abstractions compromises correctness, especially in the presence of failures and unwanted interleaving between applications. A key problem arises when operations on IoT devices or the application itself fails, which leads to inconsistencies between the physical state and application state, breaking application semantics and causing undesired consequences. Transactions are a well-established abstraction for correctness, but assume properties that are absent in an IoT context. In this article, we study one such environment, smart home, and establish inconsistencies manifesting out of failures. We propose an abstraction called transactuation that empowers developers to build reliable applications. Our runtime, Relacs, implements the abstraction atop a real smart-home platform. We evaluate programmability, performance, and effectiveness of transactuations to demonstrate its potential as a powerful abstraction and execution model.",
+        "refs": {
+            "@acm": "https://dl.acm.org/doi/10.1145/3380907",
+            "pdf": "https://dl.acm.org/doi/pdf/10.1145/3380907"
+        },
+        "visible": "true"
+    },
     "atc19":
     {
         "type": "conference",
-        "title": "Transactuations: Where Transactions Meet the Physical World ☞ 𝕭𝖊𝖘𝖙 𝕻𝖆𝖕𝖊𝖗 𝕬𝖜𝖆𝖗𝖉",
+        "title": "Transactuations: Where Transactions Meet the Physical World ☞ [Best Paper Award]",
         "authors": "Aritra Sengupta, Tanakorn Leesatapornwongsa, Masoud Saeida Ardekani, Cesar A. Stuardo",
         "venue": "In USENIX Annual Technical Conference (Usenix-ATC)",
         "location": "Renton, Washington",
@@ -124,7 +139,7 @@
     },     
     "concur16":
     {
-        "type": "tr",
+        "type": "conference",
         "title": "Consistency in 3D",
         "authors": "Marc Shapiro, Masoud Saeida Ardekani, Gustavo Petri",
         "venue": "Technical Report RR-8932 <br /> Invited talk in 27th International Conference on Concurrency Theory (CONCUR)",
